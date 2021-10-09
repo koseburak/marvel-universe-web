@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Marvel Universe</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="metadata">
+          <a href="/">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" width="96px"/>
+          </a>
+        </div>
+        <form action="/search" method="GET">
+          <input
+            autofocus
+            class="search-input"
+            value="{{ .Query }}"
+            placeholder="Enter a Marvel Character name"
+            type="search"
+            name="character"
+          />
+        </form>
+        <a
+          target="_blank"
+          href="https://github.com/koseburak/marvel-universe-web"
+          class="button github-button"
+          >View on GitHub</a
+        >
+      </header>
+      <section class="container">
+        <ul class="search-results">
+          {{ range.Results.Data.Results }}
+          <li class="news-article">
+            <div>
+              <a target="_blank" rel="noreferrer noopener" href="{{ .Thumbnail.Path }}.{{ .Thumbnail.Extension }}">
+                <h3 class="title">{{.Name }}</h3>
+              </a>
+              <p class="description">{{ .Description }}</p>
+            </div>
+            <img class="article-image" src="{{ .Thumbnail.Path }}.{{ .Thumbnail.Extension }}" width="256px" />
+          </li>
+          {{ end }}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
