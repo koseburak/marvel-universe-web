@@ -20,7 +20,7 @@ This project is a web based golang application that shows the information of sup
 </br>
 
 ## Run the Application using ready Docker Image
-* [Ready Docker Image(v:0.4.3)](https://hub.docker.com/repository/docker/funf/marvel-universe-web)
+* [Ready Docker Image(v:0.4.3)](https://hub.docker.com/r/funf/marvel-universe-web)
 
 > $ docker run -d -p 9000:9000 funf/marvel-universe-web:0.4.3
 
